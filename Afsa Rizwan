@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Lato", sans-serif !important;
+    background: #ffff;
+    
+}
+h1{
+    color: #13294b;
+    font-weight: 600;
+}
+
+/* .owl-carousel{
+    border: 1px solid #13294b;
+    margin-bottom: 100px;
+} */
+.slider {
+    margin: auto;
+    position: relative;
+
+}
+.slider .owl-item.active.center .slider-card {
+    transform: scale(1.15);
+    opacity: 1;
+    background-color: #f4f6ef;
+}
+
+.slider-card{
+    height: 500px;
+    background-color: #ffffff;
+    margin: 50px 15px 90px 15px;
+    border-radius: 5px;
+    box-shadow: 0 15px 45px -20px #888888;
+    transform: scale(0.9);
+    transition: all 0.3s;
+    position: relative;
+}
+
+.slider-card:hover{
+    background-color: #f4f6ef;
+}
+.slider-card img{
+    border-radius:5px 5px 0px 0px ;
+}
+.owl-nav .owl-next{
+    position: absolute;
+    top:calc(50% - 25px);
+    right: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+}
+.owl-nav .owl-prev{
+    position: absolute;
+    top:calc(50% - 25px);
+    left: 0;
+    opacity: 1;
+    font-size: 30px !important;
+    z-index: 1;
+}
+
+h5{
+    font-weight: 400;
+    color: #13294b;
+}
+
+h5,p{
+    text-align: center;
+    padding: 5px;
+    font-size: auto;
+}
+.p{
+    display: block;
+}
+
+/* ----------------------------------------- */
+.gallery {
+    --s: 80px; /* control the size of the images*/
+    
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    gap: 5px;
+    position: absolute;
+  }
+  .gallery input {
+    color: #13294b;
+    position: absolute;
+    inset: calc(50% - var(--s)/3);
+    cursor: pointer;
+    /* border:1px solid #13294b; */
+    --g: linear-gradient(#13294b 0 0) no-repeat;
+    background: var(--g) 50%/var(--b,0%) 3px,var(--g) 50%/3px var(--b,0%);
+    background: none;
+    transition: 1.5s;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 80px;  /* Adjusted width */
+    height: 80px;  /* Adjusted height */
+
+  }
+  .gallery > img {
+    width: var(--s);
+    aspect-ratio: 1;
+    object-fit: cover;
+    transform: scale(.05);
+    filter: brightness(0);
+    pointer-events: none;
+    transform-origin: var(--x) var(--y);
+    transition: 1s calc((var(--i) - 1)*.1s);
+    display: none;
+    
+  }
+  .gallery > img:nth-of-type(1) {--i:1;--x: 150%;--y:150%;}
+  .gallery > img:nth-of-type(2) {--i:2;--x:  50%;--y:150%;}
+  .gallery > img:nth-of-type(3) {--i:3;--x: -50%;--y:150%;}
+  .gallery > img:nth-of-type(4) {--i:4;--x: 150%;--y:50%; }
+  .gallery > img:nth-of-type(5) {--i:5 }
+  .gallery > img:nth-of-type(6) {--i:6;--x: -50%;--y:50%; }
+  .gallery > img:nth-of-type(7) {--i:7;--x: 150%;--y:-50%;}
+  .gallery > img:nth-of-type(8) {--i:8;--x:  50%;--y:-50%;}
+  .gallery > img:nth-of-type(9) {--i:9;--x: -50%;--y:-50%;}
+  
+  .gallery > input:checked ~ img {
+    transform: scale(1);
+    filter: brightness(1);
+    pointer-events: initial;
+    display: block; 
+
+  }
+  .gallery > input:checked {
+    transform: translateY(calc(1.75*var(--s))) scale(.5) rotate(45deg);
+    --b: 50%;
+  }
+  
